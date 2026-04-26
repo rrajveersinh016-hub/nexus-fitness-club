@@ -1013,10 +1013,20 @@
             
             /* Dashboards */
             .auth-card { padding: 20px; margin: 20px auto; }
-            .dash-card { padding: 15px !important; margin-bottom: 10px !important; display: block !important; }
-            .dash-grid { gap: 10px !important; }
+            .dash-card { padding: 15px !important; margin-bottom: 0 !important; display: block !important; }
+            .dash-grid { display: grid !important; grid-template-columns: repeat(2, 1fr) !important; gap: 10px !important; }
             .dash-card h4 { font-size: 0.8rem !important; margin-bottom: 5px !important;}
             .dash-card .val { font-size: 1.5rem !important;}
+            
+            /* Admin Table Sticky Details */
+            #admin-dashboard-view .data-table th:first-child,
+            #admin-dashboard-view .data-table td:first-child {
+                position: sticky;
+                left: 0;
+                background: #0a0a0a;
+                z-index: 2;
+                box-shadow: 2px 0 5px rgba(0,0,0,0.5);
+            }
             
             /* Trainer Avatar & Media */
             .trainer-avatar { width: 100px !important; height: 100px !important; font-size: 2rem !important; margin-bottom:10px !important; border-width: 2px !important; }
