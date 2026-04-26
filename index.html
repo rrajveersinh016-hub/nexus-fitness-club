@@ -31,6 +31,7 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            max-width: 100%;
         }
 
         body, html {
@@ -40,6 +41,8 @@
             overflow-x: hidden;
             scroll-behavior: smooth;
         }
+        body { max-width: 100vw; }
+        img { max-width: 100%; height: auto; }
 
         h1, h2, h3, h4, h5, h6 {
             font-family: var(--font-head);
@@ -844,8 +847,8 @@
         /* Floating WhatsApp */
         .whatsapp-float {
             position: fixed;
-            bottom: 30px;
-            right: 30px;
+            bottom: 15px;
+            right: 15px;
             background-color: #25d366;
             color: #fff;
             width: 60px;
@@ -856,7 +859,7 @@
             align-items: center;
             font-size: 35px;
             box-shadow: 0 5px 15px rgba(37, 211, 102, 0.4);
-            z-index: 100;
+            z-index: 9999;
             transition: var(--transition);
         }
 
@@ -921,13 +924,14 @@
                 position: fixed;
                 top: 70px;
                 left: -100%;
-                width: 100%;
+                width: 100vw;
                 height: calc(100vh - 70px);
                 background-color: rgba(10, 10, 10, 0.98);
                 flex-direction: column;
                 align-items: center;
                 justify-content: center;
                 transition: var(--transition);
+                overflow-x: hidden;
             }
             .nav-links.active { left: 0; }
             .mobile-menu-btn { display: block; }
@@ -935,7 +939,7 @@
             .hero-title { font-size: 3.5rem; }
             .hero-buttons { flex-direction: column; }
             
-            .services-grid, .cards-wrapper, .facilities-grid { grid-template-columns: repeat(2, 1fr); }
+            .services-grid, .cards-wrapper, .facilities-grid { grid-template-columns: repeat(2, 1fr); gap: 15px; }
             .plans-wrapper { grid-template-columns: 1fr; }
             
             .bmi-container, .contact-wrapper, .form-row { flex-direction: column; }
@@ -943,9 +947,34 @@
         }
 
         @media (max-width: 480px) {
-            .services-grid, .cards-wrapper, .facilities-grid, .stats-bar { grid-template-columns: 1fr; }
-            .hero-title { font-size: 2.8rem; }
-            .section-title { font-size: 2.2rem; }
+            .section-padding { padding: 30px 15px !important; }
+            .portal-container { padding-top: 90px; padding-bottom: 20px; }
+            .cards-wrapper { grid-template-columns: 1fr; }
+            .services-grid, .facilities-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+            .service-card { padding: 15px 10px; height: 100%; }
+            .service-icon { font-size: 2rem; margin-bottom: 10px; }
+            .service-card h3 { font-size: 1.2rem; margin-bottom: 8px; }
+            .service-card p { font-size: 0.8rem; line-height: 1.4; }
+            
+            .hero-title { font-size: 32px !important; }
+            .hero-subtitle { font-size: 16px !important; }
+            .hero-buttons .btn { width: 100%; display: block; margin-bottom: 10px; padding: 12px 20px; text-align: center; }
+            
+            .stats-bar { grid-template-columns: repeat(4, 1fr) !important; gap: 5px; padding: 15px 5px; }
+            .stat-item h3 { font-size: 1.2rem !important; }
+            .stat-item p { font-size: 0.6rem !important; line-height: 1.2; text-transform: none; font-weight: normal; }
+            
+            .section-title { font-size: 2rem; margin-bottom: 30px; }
+            
+            .mobile-hint { display: block !important; }
+            .data-table th, .data-table td { font-size: 13px !important; padding: 10px; }
+            
+            .auth-card { padding: 20px; margin: 20px auto; }
+            .dash-card { padding: 15px !important; margin-bottom: 15px !important; }
+            
+            .contact-list li { font-size: 0.95rem; }
+            .plan-card { padding: 25px 20px; }
+            .plan-price { font-size: 2.5rem; }
         }
     </style>
 </head>
@@ -1134,11 +1163,12 @@
         </div>
     </section>
 
-    <!-- 5. Class Timetable -->
-    <section id="timetable" class="section-padding" style="background-color: #111;">
+    <!-- 5. Timetable -->
+    <section id="timetable" class="section-padding">
         <div class="container">
             <h2 class="section-title">Class <span>Timetable</span></h2>
-            <div class="timetable-wrapper">
+            <div class="mobile-hint" style="display:none; text-align:center; color: var(--accent); margin-bottom: 10px; font-size:0.9rem;">Scroll to see full schedule &rarr;</div>
+            <div class="timetable-wrapper" style="overflow-x: auto;">
                 <table class="timetable">
                     <thead>
                         <tr>
