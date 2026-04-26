@@ -646,6 +646,55 @@
             margin-bottom: 0;
         }
 
+        /* Trainer Avatars */
+        .trainer-avatar {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            border: 4px solid var(--accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: #fff;
+            text-transform: uppercase;
+        }
+        .avatar-orange { background: linear-gradient(135deg, #FF6B00, #FF3D00); }
+        .avatar-blue { background: linear-gradient(135deg, #007bff, #00d4ff); }
+        .avatar-purple { background: linear-gradient(135deg, #8a2be2, #da70d6); }
+
+        /* Transformation Visuals */
+        .transformation-view {
+            height: 350px;
+            display: flex;
+            position: relative;
+            overflow: hidden;
+        }
+        .before-side, .after-side {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-family: var(--font-head);
+            font-size: 1.8rem;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.2);
+        }
+        .before-side { background-color: #222; }
+        .after-side { background-color: #444; }
+        .divider-line {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background-color: var(--accent);
+            transform: translateX(-50%);
+            z-index: 2;
+        }
+
         /* Facilities Icon Grid */
         .facilities-grid {
             display: grid;
@@ -1050,7 +1099,7 @@
                         <li><i class="fa-solid fa-xmark" style="color: #666;"></i> Steam Bath</li>
                         <li><i class="fa-solid fa-xmark" style="color: #666;"></i> Diet Plan</li>
                     </ul>
-                    <a href="https://wa.me/919999999999" target="_blank" class="btn btn-outline btn-full"><i class="fa-brands fa-whatsapp"></i> Join Now</a>
+                    <a href="https://wa.me/919558752573" target="_blank" class="btn btn-outline btn-full"><i class="fa-brands fa-whatsapp"></i> Join Now</a>
                 </div>
 
                 <!-- Quarterly (Popular) -->
@@ -1065,7 +1114,7 @@
                         <li><i class="fa-solid fa-check"></i> Locker & Shower Access</li>
                         <li><i class="fa-solid fa-check"></i> 2 Steam Sessions/mo</li>
                     </ul>
-                    <a href="https://wa.me/919999999999" target="_blank" class="btn btn-primary btn-full"><i class="fa-brands fa-whatsapp"></i> Join Now</a>
+                    <a href="https://wa.me/919558752573" target="_blank" class="btn btn-primary btn-full"><i class="fa-brands fa-whatsapp"></i> Join Now</a>
                 </div>
 
                 <!-- Annual -->
@@ -1079,7 +1128,7 @@
                         <li><i class="fa-solid fa-check"></i> Unlimited Steam Baths</li>
                         <li><i class="fa-solid fa-check"></i> 5 Personal Training Sessions</li>
                     </ul>
-                    <a href="https://wa.me/919999999999" target="_blank" class="btn btn-outline btn-full"><i class="fa-brands fa-whatsapp"></i> Join Now</a>
+                    <a href="https://wa.me/919558752573" target="_blank" class="btn btn-outline btn-full"><i class="fa-brands fa-whatsapp"></i> Join Now</a>
                 </div>
             </div>
         </div>
@@ -1151,7 +1200,11 @@
             <h2 class="section-title">Client <span>Transformations</span></h2>
             <div class="cards-wrapper">
                 <div class="media-card">
-                    <img src="assets/transformation_1777181862724.png" alt="Weight Loss Transformation">
+                    <div class="transformation-view">
+                        <div class="before-side">Before</div>
+                        <div class="divider-line"></div>
+                        <div class="after-side">After</div>
+                    </div>
                     <div class="media-info">
                         <h4>Rahul D.</h4>
                         <span class="tag">Weight Loss</span>
@@ -1159,7 +1212,11 @@
                     </div>
                 </div>
                 <div class="media-card">
-                    <img src="assets/transformation_1777181862724.png" alt="Muscle Gain Transformation">
+                    <div class="transformation-view">
+                        <div class="before-side">Before</div>
+                        <div class="divider-line"></div>
+                        <div class="after-side">After</div>
+                    </div>
                     <div class="media-info">
                         <h4>Kirtan M.</h4>
                         <span class="tag">Muscle Gain</span>
@@ -1167,7 +1224,11 @@
                     </div>
                 </div>
                 <div class="media-card">
-                    <img src="assets/transformation_1777181862724.png" alt="Posture Correction Transformation">
+                    <div class="transformation-view">
+                        <div class="before-side">Before</div>
+                        <div class="divider-line"></div>
+                        <div class="after-side">After</div>
+                    </div>
                     <div class="media-info">
                         <h4>Amit S.</h4>
                         <span class="tag">Posture Correction</span>
@@ -1184,19 +1245,19 @@
             <h2 class="section-title">Expert <span>Trainers</span></h2>
             <div class="cards-wrapper">
                 <div class="media-card" style="text-align: center; padding: 40px 20px; background: transparent; border: none;">
-                    <img src="assets/trainer_photo_1777181846768.png" alt="Head Coach" style="width: 200px; height: 200px; border-radius: 50%; margin: 0 auto 20px; border: 4px solid var(--accent);">
+                    <div class="trainer-avatar avatar-orange">V</div>
                     <h4>Vikram Singh</h4>
                     <span class="tag" style="margin-bottom: 15px;">Head Coach / CrossFit</span>
                     <p style="color: var(--text-muted); font-size: 0.9rem;">10+ years experience. ACE Certified. Specialist in strength conditioning.</p>
                 </div>
                 <div class="media-card" style="text-align: center; padding: 40px 20px; background: transparent; border: none;">
-                    <img src="assets/trainer_photo_1777181846768.png" alt="Fitness Coach" style="width: 200px; height: 200px; border-radius: 50%; margin: 0 auto 20px; border: 4px solid var(--accent);">
+                    <div class="trainer-avatar avatar-blue">R</div>
                     <h4>Rohan Patel</h4>
                     <span class="tag" style="margin-bottom: 15px;">Senior PT / Bodybuilding</span>
                     <p style="color: var(--text-muted); font-size: 0.9rem;">Former state-level bodybuilder. Master of biomechanics and hyper-growth.</p>
                 </div>
                 <div class="media-card" style="text-align: center; padding: 40px 20px; background: transparent; border: none;">
-                    <img src="assets/trainer_photo_1777181846768.png" alt="Yoga Instructor" style="width: 200px; height: 200px; border-radius: 50%; margin: 0 auto 20px; border: 4px solid var(--accent);">
+                    <div class="trainer-avatar avatar-purple">P</div>
                     <h4>Pooja Desai</h4>
                     <span class="tag" style="margin-bottom: 15px;">Yoga & Mobility Expert</span>
                     <p style="color: var(--text-muted); font-size: 0.9rem;">RYT 500 Yoga Alliance. Focuses on breathing techniques and core stability.</p>
@@ -1359,14 +1420,14 @@
                             <i class="fa-solid fa-phone"></i>
                             <div>
                                 <strong>Phone</strong><br>
-                                +91 99999 99999
+                                +91 95587 52573
                             </div>
                         </li>
                         <li>
                             <i class="fa-brands fa-whatsapp"></i>
                             <div>
                                 <strong>WhatsApp</strong><br>
-                                +91 99999 99999
+                                +91 95587 52573
                             </div>
                         </li>
                         <li>
@@ -1428,7 +1489,7 @@
     </footer>
 
     <!-- Floating WhatsApp -->
-    <a href="https://wa.me/919999999999" class="whatsapp-float" target="_blank" title="Chat on WhatsApp">
+    <a href="https://wa.me/919558752573" class="whatsapp-float" target="_blank" title="Chat on WhatsApp">
         <i class="fa-brands fa-whatsapp"></i>
     </a>
     </div> <!-- end main-landing -->
